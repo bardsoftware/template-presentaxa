@@ -1,0 +1,66 @@
+% This file demonstrates the usage of Presentaxa Beamer theme
+% Copyright 2015 BarD Software s.r.o
+% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+% International License.
+\begin{frame}{Тема Presentaxa}
+\largetext{
+\begin{itemize}
+    \PresentaxaFullPageItemize
+    \item Приятный внешний вид
+
+        \begin{itemize}
+        \setlength{\itemsep}{0.25ex}
+        \item ничего лишнего
+        \item красивые кириллические шрифты
+        \item светлая спокойная цветовая гамма
+        \end{itemize}
+    \pause
+    \item Основана на теме Presento
+  
+        \begin{itemize}
+        \setlength{\itemsep}{0.25ex}
+        \item автором оригинальной темы Presento является Ratul Saha. \url{http://www.ratulsaha.com}
+        \item переработка и адаптация к кириллице сделаны командой Папирии. \url{http://papeeria.com}
+        \end{itemize}
+\end{itemize}
+}
+\end{frame}
+
+\begin{frame}{Отличия от Presento}
+\begin{itemize}
+    \PresentaxaFullPageItemize
+    \item Presentaxa используется стандартным способом: \texttt{\textbackslash usetheme\{presentaxa\}}
+    \item Шрифты без кириллических глифов заменены схожими свободными кириллическими
+    \item Добавлена поддержка подзаголовков (\texttt{\textbackslash framesubtitle}) и заменен индикатор прогресса
+    \item Упрощены структура файлов и набор команд
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Свободные шрифты}
+\begin{itemize}
+    \PresentaxaFullPageItemize
+    \item {\ptsansfont Название презентации набрано шрифтом PT Sans Caption}
+    \item {\latolightfont Заголовки используют шрифт Lato Light}
+    \item {\notosansfont Основной шрифт Noto Sans}
+    \item {\dejavumonofont Моноширинный шрифт DejaVu Sans Mono}
+    \item \textsc{Капительный шрифт Idealist Sans Light}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Цветовая палитра}
+\begin{center}
+    \crule[colordgray] 
+    \crule[colorhgray] 
+    \crule[colorblue] 
+    \crule[colorgreen] 
+    \crule[colororange]
+\end{center}
+\end{frame}
+
+\PresentaxaTextCard{ЭТО ОЧЕНЬ ВАЖНЫЙ СЛАЙД!}
+
+\PresentaxaImageCard[0.7]{images/skeleton}[
+    \begin{textblock}{7}(5,-3)
+    \color{colorblue}\hugetext{\textbf{Погнали!}}
+    \end{textblock}
+]

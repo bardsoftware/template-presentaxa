@@ -1,0 +1,49 @@
+% font sizes
+\newcommand{\fontsizeone}{2.292em}
+\newcommand{\fontsizetwo}{1.217em}
+\newcommand{\fontsizethree}{0.875em}
+% line spaces
+\newcommand{\linespaceone}{1}
+\newcommand{\linespaceonehalf}{2.75em}
+
+
+% font families
+\def\PresentaxaFontNotoSans#1{\expandafter#1
+[
+  Ligatures=TeX,
+  Path=fonts/,
+  BoldFont=NotoSans-Bold,
+  ItalicFont=NotoSans-Italic,
+  BoldItalicFont=NotoSans-BoldItalic,
+  SmallCapsFont=Idealist_Sans_Light,
+  SmallCapsFeatures={Letters=SmallCaps}
+]{NotoSans-Regular}
+}
+\PresentaxaFontNotoSans{\newfontfamily{\notosansfont}}
+\PresentaxaFontNotoSans{\setmainfont}
+\PresentaxaFontNotoSans{\setsansfont}
+
+\def\PresentaxaFontMono#1{\expandafter#1
+[
+    Ligatures=TeX,
+    Scale=0.9
+]{DejaVu Sans Mono}
+}
+\PresentaxaFontMono{\setmonofont}
+\PresentaxaFontMono{\newfontfamily{\dejavumonofont}}
+
+\newfontfamily{\ptsansfont}[
+  Path     = fonts/,
+  BoldFont = PT_Sans-Caption-Web-Bold
+]{PT_Sans-Caption-Web-Regular}
+\newfontfamily{\latolightfont}[Path=fonts/]{Lato-Light}
+\newfontfamily{\idealistfont}[Path=fonts/]{Idealist_Sans_Light}
+
+\newcommand{\hugetext}[1]{
+ {\fontsize{\fontsizeone}{\linespaceonehalf}\selectfont #1}
+}
+
+\newcommand{\largetext}[1]{
+ {\fontsize{\fontsizetwo}{\fontsizeone}\selectfont{#1}}
+}
+

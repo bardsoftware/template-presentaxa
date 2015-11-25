@@ -1,0 +1,27 @@
+% This file is a part of Presentaxa Beamer theme
+% which is based on Presento theme created by Ratul Saha
+% Copyright 2015 BarD Software s.r.o
+% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+% International License.
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{presentaxa}[1][] {
+ \vspace{0.40em}
+ \begin{tikzpicture}[
+   remember picture,overlay,xshift=(-\beamer@leftmargin),
+   yshift=-.5ex]%
+    \node{%
+        \tikz[remember picture,overlay] {
+          \fill[fill=colororange]  (0,0) rectangle (.5em, \baselineskip);      
+        }
+    };%
+ \end{tikzpicture}%
+ \noindent\latolightfont\color{colororange}\insertframetitle\par
+ \ifx\insertframesubtitle\@empty%
+ \else%
+  {\usebeamerfont{framesubtitle}\insertframesubtitle\strut\par}%
+  \fi
+}
+
+\mode<all>

@@ -1,0 +1,27 @@
+% This file is a part of Presentaxa Beamer theme
+% which is based on Presento theme created by Ratul Saha
+% Copyright 2015 BarD Software s.r.o
+% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+% International License.
+\mode<presentation>
+
+% Title page style definition
+\defbeamertemplate*{title page}{presentaxa}[1][] {
+\def\localSmall[#1]{
+ \fontsize{\fontsizethree}{\fontsizeone}\selectfont{#1}
+}
+
+  \vfill
+  \color{colororange}
+  \hugetext{\inserttitle}\\
+  \largetext{\insertsubtitle}
+  \vfill
+  \largetext{\color{colorgreen}{\insertauthor}}\\
+  \localSmall{\color{colordgray} \insertinstitute}
+  \vfill
+  \localSmall{\insertdate}
+  \vfill
+}
+
+\setbeamertemplate{items}[square]
+\mode<all>

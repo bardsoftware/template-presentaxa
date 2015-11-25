@@ -1,0 +1,79 @@
+% Copyright 2015 BarD Software s.r.o
+% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+% International License.
+% It is loosely based on Presento Beamer theme created by Ratul Saha
+
+% This package defines a few commands which might be useful for 
+% building attractive presentations.
+
+\RequirePackage{PresentaxaDeps}
+\RequirePackage{textpos}
+\RequirePackage{xparse}
+% This defines width and height units for text positioning
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+
+% Colored square
+\newcommand\crule[1][black]{\textcolor{#1}{\rule{2cm}{2cm}}}
+
+%%%%%% \PresentaxaFullPageItemize
+%
+% when used after \begin{itemize} makes
+% itemize filling the whole page height.
+\newcommand{\PresentaxaFullPageItemize}{\setlength{\itemsep}{\fill}}
+
+%%%%%% \PresentaxaColors 
+%
+% defines colors used in Presentaxa theme. Might be useful 
+% if you're switching themes with \usetheme
+\newcommand{\PresentaxaColors}{\RequirePackage{PresentaxaColors}}
+
+%%%%%% \PresentaxaTextCard[background=colorgreen][foreground=white]{text}
+%
+% creates a slide filled with background color and places a huge 
+% centered text in the middle
+\DeclareDocumentCommand{\PresentaxaTextCard}{O{colorgreen} O{white} m}{
+  {\setbeamercolor{background canvas}{bg=#1}
+    \setbeamertemplate{footline}{}
+    \begin{frame}
+    \vfill
+    \begin{center}
+    \hugetext{\ptsansfont \color{#2} #3 \par}
+    \end{center}
+    \vfill
+    \end{frame}
+  }
+}
+
+%%%%%% \PresentaxaImageCard[opacity=1]{image file}[content={}] ======
+%
+% creates a slide with the specified image in the background color, applies
+% specified opacity and adds content. Everything but image file name is optional.
+%
+%
+\DeclareDocumentCommand{\PresentaxaImageCard}{O{1} m O{}}{
+    \setbeamertemplate{footline}{}
+    \usebackgroundtemplate{%
+    \tikz[overlay,remember picture] \node[opacity=#1, at=(current page.center)] {
+      \includegraphics[width=\paperwidth]{#2}};
+    }
+    \begin{frame}
+    #3
+    \end{frame}
+}
+
+%%%%%% \PresentaxaProgressBar[color=colororange][height=0.2]
+%
+% creates a progress bar at the frame footline. It grows as presentation 
+% progresses
+\DeclareDocumentCommand{\PresentaxaProgressBar}{O{colororange} O{0.2}}{
+    \newcounter{totalfr}
+    \setbeamertemplate{footline}{
+        \setcounter{totalfr}{\inserttotalframenumber} 
+        \tikz{
+          \fill[fill=#1]  (-0.3,0) rectangle (
+              {\value{framenumber}*\textwidth/(\value{totalfr})}, #2);
+        }
+    }
+}
+

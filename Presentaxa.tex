@@ -1,0 +1,31 @@
+% This file demonstrates the usage of Presentaxa Beamer theme
+% Copyright 2015 BarD Software s.r.o
+% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+% International License.
+\documentclass[14pt]{beamer}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\usetheme{presentaxa}
+
+\title{Presentaxa}
+\subtitle{простая и красивая презентация}
+\author{Команда Папирии}
+\institute{\url{http://papeeria.com}}
+\date{\today}
+
+% Toolkit defines commands which might be useful for building
+% attractive presentations.
+\input{PresentaxaToolkit}
+
+\begin{document}
+% Progress bar shows up at the page bottom
+\PresentaxaProgressBar
+
+% Title page shows no footer and is not counted in the total frame number
+\begin{frame}[plain,noframenumbering]
+\titlepage
+\end{frame}
+
+\input{content}
+
+\end{document}
